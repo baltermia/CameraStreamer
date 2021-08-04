@@ -2,12 +2,12 @@
 <package >
   <metadata>
     <id>speyck.CameraStreamer</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>seyck.CameraStreamer</title>
     <authors>speyck</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>CameraStreamer is a simple facade of the Aforge library and allows you to stream your Computer Camera on desktop apps. It is optimized for WPF projects but can also work with WinForms or other projects.</description>
-    <releaseNotes>Initial version</releaseNotes>
+    <releaseNotes>Added PresentationCore & PresentationFramework to dependencies</releaseNotes>
 	<tags></tags>
   </metadata>
 </package>
