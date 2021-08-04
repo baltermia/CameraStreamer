@@ -7,8 +7,8 @@
     <ProjectGuid>{E323A004-AB3E-4885-A968-9D25E7F7A24F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CameraStreamer</RootNamespace>
-    <AssemblyName>CameraStreamer</AssemblyName>
+    <RootNamespace>speyck.CameraStreamer</RootNamespace>
+    <AssemblyName>speyck.CameraStreamer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

@@ -3,7 +3,7 @@ using System.Drawing.Imaging;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace CameraStreamer
+namespace speyck.CameraStreamer
 {
     /// <summary>
     /// Extends the Bitmap class with new Methods

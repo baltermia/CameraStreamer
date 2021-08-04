@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace CameraStreamer
+namespace speyck.CameraStreamer
 {
     public class CameraStreamer : IDisposable
     {

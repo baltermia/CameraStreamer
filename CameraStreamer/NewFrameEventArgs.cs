@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace CameraStreamer
+namespace speyck.CameraStreamer
 {
     /// <summary>
     /// Arguments for OnNewFrame event from CameraStreamer
