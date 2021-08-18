@@ -1,6 +1,6 @@
 name: Create packages .NET Framework
 
-on: 
+on:
   release:
   workflow_dispatch:
 
@@ -11,31 +11,35 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
       
-      - name: Setup nuget
-        uses: nuget/setup-nuget@v1.0.2
+      - name: Setup
+        uses: actions/setup-dotnet@v1.7.2
         with:
-          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
-          nuget-version: 'latest'
-      
-      - name: Setup MSBuild.exe
-        uses: warrenbuckley/Setup-MSBuild@v1
+          dotnet-version: 3.1.301
+          source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
         env:
-          working-directory: CameraStreamer
-      
-      - run: msbuild -t:restore
-        working-directory: CameraStreamer
-      
-      - run: msbuild -t:build
-        working-directory: CameraStreamer
-      
-      - name: Nuget Add Source
-        run: nuget sources Add -Name "github" -Source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json -UserName ${{ github.repository_owner }} -Password ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Nuget SetAPIKey
-        run: nuget setapikey ${{ secrets.GITHUB_TOKEN }} -Source "github"
-      
-      - name: Publish the package to GitHub packages
-        working-directory: CameraStreamer
-        run: nuget push bin\Debug\*.nupkg -source "github" -SkipDuplicate
+          NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
+          
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.0.2
+          
+      - name: Restore dependencies
+        run: dotnet restore
+        
+      - name: Build
+        run: dotnet build --configuration Debug --no-restore
+        
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+
+      - name: Pack
+        run: dotnet pack --no-build --configuration Debug
+        
+      - name: Push NuGet
+        run: dotnet nuget push "**/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+        
+      - name: Push GitHub
+        run: nuget.exe push "**/*.nupkg" -NoSymbols -SkipDuplicate
+        env:
+          NUGET_AUTH_TOKEN: ${{ github.token }}
