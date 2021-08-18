@@ -28,16 +28,16 @@ jobs:
         run: msbuild -t:restore
         
       - name: Build
-        run: msbuild -t:build --configuration Debug
+        run: msbuild -t:build
         
       - name: Test
-        run: msbuild -t:test --no-build --verbosity normal
+        run: msbuild -t:test
 
       - name: Pack
-        run: msbuild -t:pack --no-build --configuration Debug
+        run: msbuild -t:pack
         
       - name: Push NuGet
-        run: msbuild -t:nuget push "**/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+        run: dotnet nuget push "**/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
         
       - name: Push GitHub
         run: nuget.exe push "**/*.nupkg" -NoSymbols -SkipDuplicate
