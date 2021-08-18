@@ -20,10 +20,8 @@ namespace speyck.CameraStreamer
          *  - AForge.Video.DirectShow
          *  - DirectShowLib
          *  - System.Drawing.Common
-         *  
-         *  Libraries from 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\':
-         *  - PresentationCore
-         *  - PresentationFramework
+         *  - EPP.PresentationCore
+         *  - EPP.PresentationFramework
         */
 
         #region Static variables
