@@ -14,9 +14,8 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Setup
-        uses: actions/setup-dotnet@v1.7.2
+        uses: microsoft/setup-msbuild@v1.0.2
         with:
-          dotnet-version: 3.1.301
           source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
         env:
           NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
@@ -25,19 +24,19 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.2
           
       - name: Restore dependencies
-        run: dotnet restore
+        run: msbuild -t:restore
         
       - name: Build
-        run: dotnet build --configuration Debug
+        run: msbuild -t:build --configuration Debug
         
       - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: msbuild -t:test --no-build --verbosity normal
 
       - name: Pack
-        run: dotnet pack --no-build --configuration Debug
+        run: msbuild -t:pack --no-build --configuration Debug
         
       - name: Push NuGet
-        run: dotnet nuget push "**/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+        run: msbuild -t:nuget push "**/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
         
       - name: Push GitHub
         run: nuget.exe push "**/*.nupkg" -NoSymbols -SkipDuplicate
