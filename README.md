@@ -5,5 +5,5 @@
 [![CameraStreamer](https://img.shields.io/nuget/dt/speyck.CameraStreamer.svg?style=flat-square)](https://www.nuget.org/packages/speyck.CameraStreamer/)
 [![CodeFactor](https://www.codefactor.io/repository/github/speyck/camerastreamer/badge)](https://www.codefactor.io/repository/github/speyck/camerastreamer)
 
-A .NET Framework library helping you to stream your computer camera in WPF, WinForms or any desktop apps.
+A .NET Framework library helping you to stream your computer camera in WPF, WinForms or other desktop apps.
   
