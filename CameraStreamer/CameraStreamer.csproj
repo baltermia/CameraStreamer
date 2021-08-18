@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <PackageOutputPath>bin\debug\</PackageOutputPath>
+	
+	<Version>1.0.2</Version>
+    <PackageReleaseNotes></PackageReleaseNotes>
+
+    <RepositoryUrl>https://github.com/speyck/CameraStreamer</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    
+    <RootNamespace>speyck.CameraStreamer</RootNamespace>
+    <PackageId>speyck.CameraStreamer</PackageId>
+    <Authors>speyck</Authors>
+    <Company>speyck</Company>
+    <Product>speyck.CameraStreamer</Product>
+    <Description>CameraStreamer is a simple facade of the Aforge library and allows you to stream your Computer Camera on desktop apps. It is optimized for WPF projects but can also work with WinForms or other projects.</Description>
+    <NeutralLanguage>en-CH</NeutralLanguage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
