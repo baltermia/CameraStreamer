@@ -2,7 +2,7 @@ name: Create packages .NET Framework
 
 on:
   release:
-    type: [published]
+    types: [published]
 
 jobs:
   build:
