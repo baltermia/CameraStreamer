@@ -29,13 +29,13 @@ jobs:
         run: msbuild -t:restore
 
       - name: Build
-        run: msbuild -t:build -property:NoRestore -property:Configuration=Debug
+        run: msbuild -t:build -property:no-restore=true -property:Configuration=Debug
 
       - name: Test
-        run: msbuild -t:test -property:NoBuild -property:Verbosity=normal
+        run: msbuild -t:test -property:no-build=true -property:Verbosity=normal
 
       - name: Pack
-        run: msbuild -t:pack -property:NoBuild -property:Configuration=Debug
+        run: msbuild -t:pack -property:no-build=true -property:Configuration=Debug
 
       - name: Push NuGet
         run: dotnet nuget push "**/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
