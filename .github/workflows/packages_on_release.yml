@@ -3,7 +3,6 @@ name: Create packages .NET Framework
 on:
   release:
     type: [published]
-  workflow_dispatch:
 
 jobs:
   build:
