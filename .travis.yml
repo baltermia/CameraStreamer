@@ -1,7 +1,8 @@
 language: csharp
 solution: CameraStreamer.sln
+dotnet: 'latest'
 install:
   - nuget restore CameraStreamer.sln
 script:
-  - dotnet build --no-restore true
+  - dotnet build --no-restore
   - dotnet test --no-build --verbosity normal 
