@@ -3,5 +3,5 @@ solution: CameraStreamer.sln
 install:
   - nuget restore CameraStreamer.sln
 script:
-  - msbuild -t:build -p:no-restore=true
-  - msbuild -t:test -p:no-build=true -t:verbosity=normal 
+  - dotnet build --no-restore true
+  - dotnet test --no-build --verbosity normal 
