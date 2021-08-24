@@ -6,6 +6,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/speyck/CameraStreamer/badge?style=flat-square)](https://www.codefactor.io/repository/github/speyck/barcodereader)
 [![Build Status](https://img.shields.io/travis/speyck/CameraStreamer.svg?branch=main&style=flat-square)](https://app.travis-ci.com/speyck/CameraStreamer)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/speyck/CameraStreamer?style=flat-square)](https://codeclimate.com/github/speyck/CameraStreamer)
-  
-A .NET Framework library helping you to stream your computer camera in WPF, WinForms or other desktop apps.
+[![Total alerts](https://img.shields.io/lgtm/alerts/github/speyck/CameraStreamer?style=flat-square)](https://lgtm.com/projects/g/speyck/CameraStreamer/alerts/)
+
+  A .NET Framework library helping you to stream your computer camera in WPF, WinForms or other desktop apps.
   
