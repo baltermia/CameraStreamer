@@ -1,6 +1,6 @@
 language: csharp
 solution: CameraStreamer.sln
-dotnet: latest
+dotnet: 3.1
 install:
   - nuget restore CameraStreamer.sln
 script:
