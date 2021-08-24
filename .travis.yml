@@ -4,4 +4,3 @@ install:
   - msbuild -t:restore
 script:
   - msbuild -t:build -p:no-restore=true
-  - msbuild -t:test -p:no-build=true -p:verbosity=normal 
